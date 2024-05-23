@@ -1,0 +1,505 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link{
+    color: black;
+}
+
+.nav{
+    height: 6vh;
+}
+
+.active{
+    font-weight: 600;
+}
+
+:root {
+    --main-color: #4CA1AF;
+    --secundary-color: #49627a;
+    --light-black: #515C6F;
+    --white-color: #fff;
+    --dark-white: #cecaca;
+    --main-shadow: #ffcbdd;
+    --light-shadow: rgba(0, 0, 0, 0.15);
+    --white-mode: #e6e6e6;
+}
+
+.detalhe{
+    height: 3vh;
+    background-color: #FFF3CD;
+    box-shadow: 0px 6px 15px var(--light-shadow);
+}
+
+/*home*/
+
+.home{
+    width: 100%;
+    background-image: url("images/fundohome.jpg");
+    padding-bottom: 3%;
+}
+
+.carrosel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+.ajustecard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*artistas*/
+
+.ajuste-artistas{
+    background-image: url("images/wallpaper\ cantores\ brasileiros.jpg");
+}
+
+.artistas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.artista{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 2%;
+    background-color: #faf5f5;
+    border-radius: 3%;
+    margin-bottom: 2%;
+}
+
+.pinfo{
+    display: flex;
+    flex-direction: row;
+}
+
+.pinfo img{
+    width: 30%;
+    border-radius: 3%;
+}
+
+.pinfo h3{
+    margin-top: 12%;
+    margin-left: 20%;
+    white-space: nowrap;
+}
+
+.txtinfo{
+    margin-top: 3%;
+    align-self: center;
+    text-indent: 10px;
+    text-align: justify;
+    width: 98%;
+}
+
+/*musicas*/
+
+.musicas{
+    background-image: url("images/fundomusicas.webp");
+}
+
+.veridade{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-spotify{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.ajuste-btn{
+    padding: 1%;
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #ede5e5;
+    box-shadow: 0px 6px 15px var(--light-shadow);
+}
+
+.ajuste-btn p{
+    margin-top: 1%;
+    font-size: x-large;
+}
+
+.ajuste-btn h5{
+    font-weight: normal;
+}
+
+.ajuste-quiz{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz{
+    margin: 3% 0;
+    padding: 2%;
+    border-radius: 5%;
+    background-color: #ede5e5;
+    width: fit-content;
+    text-align: center;
+    box-shadow: 0px 6px 15px var(--light-shadow);
+}
+
+.quiz-txt{
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#question {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.option {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 120px;
+}
+
+.option:hover{
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: #696969;
+    color: #ffffff;
+}
+
+/*tocador de música*/
+
+.tocador{
+    padding-bottom: 2%;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 380px;
+    padding: 25px 30px;
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+    background-color: #ede5e5;
+    box-shadow: 0px 6px 15px var(--light-shadow);
+}
+
+.wrapper i {
+    cursor: pointer;
+}
+
+.top-bar, .progress-area .timer, .controls, .music-list .header, .music-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-bar span {
+    align-self: center;
+    justify-self: center;
+    font-size: 18px;
+    color: black;
+}
+
+.img-area {
+    width: 256px;
+    height: 256px;
+    margin-top: 25px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px var(--light-shadow);
+}
+
+.ajuste-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-area img {
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    object-fit: cover;
+}
+
+.song-details {
+    text-align: center;
+    color: #000;
+    margin: 30px 0;
+}
+
+.song-details .name {
+    font-size: 21px;
+}
+
+.song-details .artist {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* Progress Area */
+.progress-area {
+    width: 100%;
+    height: 6px;
+
+    background: #ffffff;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.progress-area .progress-bar {
+    width: 0%;
+    height: inherit;
+    position: relative;
+    border-radius: inherit;
+    background: #1d1d1d;
+}
+
+.progress-bar::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #1d1d1d;
+    border-radius: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-area:hover .progress-bar::before {
+    opacity: 1;
+}
+
+.progress-area .timer {
+    margin-top: 2px;
+}
+
+.timer span {
+    font-size: 13px;
+    color: #1d1d1d;
+}
+
+/* Icons Controls */
+.controls {
+    margin: 40px 0 5px 0;
+}
+
+.controls i {
+    font-size: 30px;
+    user-select: none;
+    background: #1d1d1d;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.controls i:nth-child(2),
+.controls i:nth-child(4) {
+    font-size: 43px;
+}
+
+.controls #prev {
+    margin-right: -13px;
+}
+
+.controls #next {
+    margin-left: -13px;
+}
+
+.controls .play-pause {
+    width: 48px;
+    height: 48px;
+
+    background: #1d1d1d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-pause::before {
+    width: 40px;
+    height: 40px;
+
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    background: #ede5e5;
+}
+
+.play-pause i {
+    width: 40px;
+    height: 40px;
+
+    line-height: 40px;
+    text-align: center;
+
+    position: relative;
+    background: inherit;
+    border-radius: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Music List */
+.music-list {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -55%;
+    opacity: 0;
+    pointer-events: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    background: var(--white-color);
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.14s ease;
+}
+
+/* Classe Utilizada no JS */
+.music-list.show {
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.music-list .header .row {
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    color: var(--light-black);
+}
+
+.header .row i {
+    cursor: default;
+}
+
+.header .row span {
+    margin-left: 5px;
+}
+
+.header #close {
+    font-size: 22px;
+    color: var(--light-black);
+}
+
+.music-list ul {
+    margin: 10px 0;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.music-list ul::-webkit-scrollbar {
+    width: 0px;
+}
+
+.music-list ul li {
+    list-style: none;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    color: var(--light-black);
+    border-bottom: 1px solid #e5e5e5;
+    cursor: pointer;
+}
+
+.music-list ul li:last-child {
+    border-bottom: 0px;
+}
+
+.music-list ul li .row span {
+    font-size: 17px;
+}
+
+ul li .row p {
+    opacity: 0.9;
+}
+
+ul li .audio-duration {
+    font-size: 16px;
+}
+
+ul li.playing {
+    color: var(--main-color);
+    pointer-events: none;
+}
+
+/*contato*/
+
+.contato{
+    background-image: url("images/fundoctt.jpg");
+    height: 90vh;
+    width: 100%;
+}
+
+.ajuste-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ajuste-form form{
+    margin: 2% 0%;
+    background-color: #faf5f5;
+    padding: 2% 5%;
+    border-radius: 5%;
+}
+
+.ajuste-form button{
+    background-color: #cec6c6;
+    border: 0;
+}
+
+.ajuste-form button:hover{
+    background-color: #ada6a6;
+    border: 0;
+}
+
+textarea{
+    width: 100%;
+}
+
+/*footer*/
+
+footer{
+    background-color: #696969;
+    padding: 10px;
+    height: 8vh;
+}
+
+footer h5{
+    font-size: small ;
+    text-align: center;
+    color: #ffffff;
+}

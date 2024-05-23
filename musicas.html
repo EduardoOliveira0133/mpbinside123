@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="icon" href="images/icon.png">
+    <title>Músicas - MPB</title>
+</head>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="artistas.html">Artistas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="musicas.html">Músicas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contato.html">Contato</a>
+        </li>
+    </ul>
+    <div class="musicas">
+      <div class="detalhe"></div>
+      <div class="veridade">
+        <div class="ajuste-btn">
+          <h3>Indicação de músicas de acordo com a idade</h3>
+          <div class="ipt-btn">
+            <input type="number" id="idade" min="1" placeholder="Digite a sua idade">
+            <button onclick="verificarIdade()">Verificar</button>
+          </div>
+          <p id="mensagem">Clique em verificar e vejas as recomendações</p>
+        </div>
+        <script>
+          function verificarIdade() {
+            var idade = parseInt(document.getElementById("idade").value);
+            var mensagem = document.getElementById("mensagem");
+            if (idade >= 3 && idade < 11){
+              mensagem.innerHTML = 'As principais músicas recomendadas são: <br><h5>Escute por aqui ou no player de música abaixo!</h5><br> <div class="card-spotify"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/174YvAb800yXcU2keQ3IkY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4LhxdvP3lfgH3ciOyO1BX1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1mSxbLW7fKABfeY4lGpg0E?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>';
+            }else if (idade >= 11 && idade < 18){
+              mensagem.innerHTML = 'As principais músicas recomendadas são: <br><h5>Escute por aqui ou no player de música abaixo!</h5><br> <div class="card-spotify"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4d0DpU7Odiv0ztvX2GxJlk?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0rAX31FT5w3ZQbQMUSkxy8?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/006pMMCuRo2TFjh8sNGSov?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>';
+            }else if (idade >= 18 && idade < 110){
+              mensagem.innerHTML = 'As principais músicas recomendadas são: <br><h5>Escute por aqui ou no player de música abaixo!</h5><br> <div class="card-spotify"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6wUp7y502iyWLuLuurlOyw?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1qD6F4egXG4T8niy2nBi8U?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2GAFZG9Z7UGS1iMm4Idrnr?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>';
+            }else{
+              alert("Digite uma idade válida!");
+            }
+          }
+          </script>
+        </div>
+        <div class="ajuste-quiz">
+      <div class="quiz">
+        <div class="quiz-txt">
+          <h1>Quiz de trechos de música MPB</h1>
+          <div id="question">Carregando pergunta...</div>
+              <div class="options" id="options"></div>
+              <div id="feedback"></div>
+            </div>
+            
+            <script>
+              // Definindo perguntas e respostas
+              const questions = [
+                {
+                question: "A marcha alegre se espalhou na avenida e insistiu A lua cheia, que vivia escondida, surgiu Minha cidade toda se enfeitou",
+                options: ["Exagerado", "Cálice", "A Banda", "João e Maria"],
+                answer: "A Banda"
+              },
+              {
+                question: "Nosso suor sagrado É bem mais belo Que esse sangue amargo E tão sério E selvagem! Selvagem! Selvagem!",
+                options: ["Eduardo e Mônica", "Construção", "Modo Bobo", "Tempo Perdido"],
+                answer: "Tempo Perdido"
+              },
+              {
+                question: "Olhe bem no fundo dos meus olhos E sinta a emoção que nascerá quando você me olhar O universo conspira a nosso favor A consequência do destino é o amor Pra sempre vou te amar?",
+                options: ["Pais e Filhos", "De Janeiro a Janeiro", "Trevo (Tu)", "Vamos Fugir"],
+                answer: "De Janeiro a Janeiro"
+              },
+              {
+                question: "Desde pequenos nós comemos lixo Comercial e industrial Mas agora chegou nossa vez",
+                options: ["Geração Coca-Cola", "Que País é Esse", "Será", "Eduardo e Mônica"],
+                answer: "Geração Coca-Cola"
+              },
+              {
+                question: "Hoje estou feliz porque eu sonhei com você E amanhã posso chorar por não poder te ver Mas o seu sorriso vale mais que um diamante Se você vier comigo, aí nós vamos adiante",
+                options: ["Jesus Chorou", "Piloto Automático", "Dias De Luta, Dias De Glória", "Céu Azul"],
+                answer: "Dias De Luta, Dias De Glória"
+              },
+              {
+                question: "Eu respondi que não tô nem aí, menti, menti De vez em quando, eu fico admirando É muita areia pro meu caminhão",
+                options: ["Mina do condomínio", "Amiga da Minha Mulher", "Burguesinha", "Apesar de Você"],
+                answer: "Amiga da Minha Mulher"
+              },
+              {
+                question: "Olha que coisa mais linda, mais cheia de graça É ela, menina, que vem e que passa Num doce balanço a caminho do mar",
+                options: ["Chove Chuva", "Por Onde Anda Você", "Apesar de Você", "Garota de Ipanema"],
+                answer: "Garota de Ipanema"
+              },
+              {
+                question: "Ao teu amor que tem cheiro de coisa maluca Vem cá, meu bem, me descola um carinho Eu sou neném, só sossego com beijinho Vê se me dá o prazer de ter prazer comigo",
+                options: ["Lança Perfume", "Mania de Você", "Boa Vida", "Boate Azul"],
+                answer: "Lança Perfume"
+              },
+              {
+                question: "É pau, é pedra, é o fim do caminho É um resto de toco, é um pouco sozinho É um caco de vidro, é a vida, é o Sol É a noite, é a morte, é o laço, é o anzol",
+                options: ["Quintal", "Água Mineral", "Águas de Março", "Céu Azul"],
+                answer: "Águas de Março"
+              },
+              {
+                question: "Na Lua o lado escuro é sempre igua-a-al No espaço a solidão é tão normal-a-al Desculpe, estranho, eu voltei mais puro do céu",
+                options: ["O Astronauta de Mármore", "Starman", "Chove Chuva", "Boa Vida"],
+                answer: "O Astronauta de Mármore"
+              }
+            ];
+            
+            // Variáveis de controle
+            let currentQuestion = 0;
+            let score = 0;
+            
+            // Função para exibir a pergunta atual
+            function showQuestion() {
+              const questionElement = document.getElementById("question");
+              const optionsElement = document.getElementById("options");
+              const currentQ = questions[currentQuestion];
+              
+              questionElement.textContent = currentQ.question;
+              optionsElement.innerHTML = "";
+              
+              currentQ.options.forEach((option, index) => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.classList.add("option");
+                button.addEventListener("click", () => checkAnswer(option));
+                optionsElement.appendChild(button);
+              });
+            }
+            
+            // Função para verificar a resposta
+            function checkAnswer(option) {
+              const currentQ = questions[currentQuestion];
+              
+              if (option === currentQ.answer) {
+                score++;
+                document.getElementById("feedback").textContent = "Resposta correta!";
+              } else {
+                document.getElementById("feedback").textContent = "Resposta incorreta!";
+              }
+              
+              // Mostrar próxima pergunta ou resultado final
+              currentQuestion++;
+              if (currentQuestion < questions.length) {
+                showQuestion();
+              } else {
+                showResult();
+              }
+            }
+            
+            // Função para exibir o resultado final
+            function showResult() {
+              const container = document.querySelector(".quiz");
+              container.innerHTML = `
+              <h1>Quiz de trechos de música MPB <br> ~Resultado~<br></h1>
+              <p>Você acertou ${score} de ${questions.length} perguntas.</p>
+              <img src="images/gatotistre.jpg" width="150px">
+              `;
+            }
+            
+            // Iniciar o quiz
+            showQuestion();
+        </script>
+      </div>
+    </div>
+      <div class="tocador">
+        <div class="wrapper">
+          <div class="top-bar">
+            <span>Tocando Agora</span>
+          </div>
+          <div class="ajuste-img">
+            <div class="img-area">
+              <img src="./img/bluemoon.jpg" alt="">
+            </div>
+          </div>
+          <div class="song-details">
+            <p class="name"></p>
+            <p class="artist"></p>
+          </div>
+          <div class="progress-area">
+            <div class="progress-bar"></div>
+            <div class="timer">
+              <span class="current">0:00</span>
+              <span class="duration"></span>
+            </div>
+            <audio id="main-audio" src=""></audio>
+          </div>
+          <div class="controls">
+            <i id="repeat-plist" class="material-icons" title="Playlist Loop">repeat</i>
+            <i id="prev" class='bx bx-skip-previous'></i>
+            <div class="play-pause">
+              <i class='bx bx-play'></i>
+            </div>
+            <i id="next" class='bx bx-skip-next'></i>
+            <i id="more-music" class='bx bxs-playlist'></i>
+          </div>
+          <div class="music-list">
+            <div class="header">
+              <div class="row">
+                <i id="more-music" class='bx bxs-playlist'></i>
+                <span class="title-music">Lista de Música</span>
+              </div>
+              <i id="close" class='bx bx-x'></i>
+            </div>
+            <ul>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <h5>Trabalho acadêmico - Sem fins lucrativos<br>Eduardo Oliveira e Emanuele Hedlund - &copyTodos os direitos reservados 2024</h5>
+    </footer>
+    <script src="javascript/music-list.js"></script>
+    <script src="javascript/script.js"></script>
+  </body>
+  </html>
